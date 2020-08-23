@@ -39,6 +39,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println("登陆成功");
             jsonObject.put("error_code", "0");   //设置Json对象的属性
             jsonObject.put("msg", "登陆成功！");
+            jsonObject.put("user",user);
         }
         response.getWriter().write(jsonObject.toString());
     }

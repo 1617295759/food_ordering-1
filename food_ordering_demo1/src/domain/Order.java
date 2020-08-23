@@ -7,17 +7,27 @@ public class Order {
 
 	private String orderID;
 	private String userID;
+	private String adminID;
 	private int mealID;
-	private String pickUpTime; //预计取餐时间
-	private int num;
+	private int pickUpTime; //预计多少分钟后取餐
+	private String orderTime; //下单时间
 	private double price;
 	private int state;  //0为制作中，1为待取餐，2为已取餐
+	private String name;//菜品名称
 
-	public String getPickUpTime() {
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPickUpTime() {
 		return pickUpTime;
 	}
 
-	public void setPickUpTime(String pickUpTime) {
+	public void setPickUpTime(int pickUpTime) {
 		this.pickUpTime = pickUpTime;
 	}
 
@@ -46,13 +56,6 @@ public class Order {
 	}
 
 
-	public int getNum() {
-		return num;
-	}
-
-	public void setNum(int num) {
-		this.num = num;
-	}
 
 	public double getPrice() {
 		return price;
@@ -68,5 +71,21 @@ public class Order {
 
 	public void setState(int state) {
 		this.state = state;
+	}
+
+	public String getOrderTime() {
+		return orderTime;
+	}
+
+	public void setOrderTime(String orderTime) {
+		this.orderTime = orderTime;
+	}
+
+	public String getAdminID() {
+		return adminID;
+	}
+
+	public void setAdminID(String adminID) {
+		this.adminID = adminID;
 	}
 }

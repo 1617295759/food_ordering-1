@@ -24,11 +24,12 @@ public class AdminLoginServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         //3.封装user对象
         Administer loginAdmin = new Administer();
-        loginAdmin.setAdministerID(adminID);
+        loginAdmin.setAdminID(adminID);
         loginAdmin.setPhone(phone);
         //4.调用AdminDao的login方法
         AdminDao dao = new AdminDao();
         Administer admin = dao.login(loginAdmin);
+
         //5.判断是否登陆成功
         JSONObject jsonObject = new JSONObject();  //创建Json对象
         if(admin == null){
@@ -41,6 +42,8 @@ public class AdminLoginServlet extends HttpServlet {
             System.out.println("登陆成功");
             jsonObject.put("error_code", "0");   //设置Json对象的属性
             jsonObject.put("msg", "登陆成功！");
+            jsonObject.put("admin",admin);
+            System.out.println(admin.toString());
         }
         response.getWriter().write(jsonObject.toString());
     }

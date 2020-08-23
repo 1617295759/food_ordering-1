@@ -2,13 +2,13 @@ package domain;
 
 public class Management {
 	
-	private int administerID;
+	private String administerID;
 	private int mealID;
 	
-	public int getAdministerID() {
+	public String getAdministerID() {
 		return administerID;
 	}
-	public void setAdministerID(int administerID) {
+	public void setAdministerID(String administerID) {
 		this.administerID = administerID;
 	}
 	public int getMealID() {

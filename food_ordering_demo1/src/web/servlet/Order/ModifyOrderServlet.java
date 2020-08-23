@@ -23,19 +23,19 @@ public class ModifyOrderServlet extends HttpServlet {
         //2.获取请求参数
         String orderID = request.getParameter("orderID");
         int state = Integer.parseInt(request.getParameter("state"));
-        String adminID = request.getParameter("adminID");
-        String phone = request.getParameter("phone");
+//        String adminID = request.getParameter("adminID");
+//        String phone = request.getParameter("phone");
         //3.封装Order对象和Administer对象
         Order tempOrder = new Order();
         tempOrder.setOrderID(orderID);
         tempOrder.setState(state);
 
         Administer admin = new Administer();
-        admin.setAdministerID(adminID);
-        admin.setPhone(phone);
+//        admin.setAdminID(adminID);
+//        admin.setPhone(phone);
         //4.调用OrderDao的modifyOrderState方法
         OrderDao dao = new OrderDao();
-        int flag = dao.modifyOrderState(tempOrder,admin);
+        int flag = dao.modifyOrderState(tempOrder);
         //5.判断order是否添加成功
         JSONObject jsonObject = new JSONObject();  //创建Json对象
         if(flag == 0){

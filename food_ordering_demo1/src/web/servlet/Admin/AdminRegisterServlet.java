@@ -27,9 +27,9 @@ public class AdminRegisterServlet extends HttpServlet {
 
         //3.封装Administer对象
         Administer registerAdmin = new Administer();
-        registerAdmin.setAdministerID(adminID);
+        registerAdmin.setAdminID(adminID);
         registerAdmin.setPhone(phone);
-        registerAdmin.setAdministerName(adminName);
+        registerAdmin.setAdminName(adminName);
         registerAdmin.setAvatarUrl(avatarURL);
         //4.调用AdminDao的register方法
         AdminDao dao = new AdminDao();

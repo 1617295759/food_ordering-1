@@ -23,7 +23,7 @@ public class ModifyMealServlet extends HttpServlet {
         int mealID = Integer.parseInt(request.getParameter("mealID"));
         int state = Integer.parseInt(request.getParameter("state"));
         String adminID = request.getParameter("adminID");
-        String phone = request.getParameter("phone");
+//        String phone = request.getParameter("phone");
         //3.封装Meal对象和Administer对象
         Meal tempMeal = new Meal();
         tempMeal.setMealID(mealID);
@@ -31,8 +31,8 @@ public class ModifyMealServlet extends HttpServlet {
         tempMeal.setPrice(price);
 
         Administer admin = new Administer();
-        admin.setAdministerID(adminID);
-        admin.setPhone(phone);
+        admin.setAdminID(adminID);
+//        admin.setPhone(phone);
         //4.调用MealDao的modifyState方法
         MealDao dao = new MealDao();
         int flag = dao.modifyState(tempMeal,admin);

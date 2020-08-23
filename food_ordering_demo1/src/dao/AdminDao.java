@@ -28,7 +28,7 @@ public class AdminDao {
             try {
                 Administer administer = template.queryForObject(sql1,
                         new BeanPropertyRowMapper<Administer>(Administer.class),
-                        registerAdmin.getAdministerID());
+                        registerAdmin.getAdminID());
                 if (administer != null) {
                     return 0;//管理员ID已被注册
                 }
@@ -36,8 +36,8 @@ public class AdminDao {
                 //1.编写sql
                 String sql2 = "insert into admin (adminID,phone,adminName,avatarURL) values (?,?,?,?)";
                 //2.调用update方法
-                int count = template.update(sql2, registerAdmin.getAdministerID(),
-                        registerAdmin.getPhone(), registerAdmin.getAdministerName(),
+                int count = template.update(sql2, registerAdmin.getAdminID(),
+                        registerAdmin.getPhone(), registerAdmin.getAdminName(),
                         registerAdmin.getAvatarUrl());
                 if (count == 1) {
                     return 1;
@@ -65,7 +65,7 @@ public class AdminDao {
             //2.调用query方法
             Administer administer = template.queryForObject(sql,
                     new BeanPropertyRowMapper<Administer>(Administer.class),
-                    loginAdmin.getAdministerID(),loginAdmin.getPhone());
+                    loginAdmin.getAdminID(),loginAdmin.getPhone());
             return administer;
         } catch (DataAccessException e) {
             e.printStackTrace();//记录日志

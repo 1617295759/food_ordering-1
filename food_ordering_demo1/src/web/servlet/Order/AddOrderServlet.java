@@ -20,20 +20,21 @@ public class AddOrderServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/json;charset=utf-8");
         //2.获取请求参数
-        String orderID = request.getParameter("orderID");
+//        String orderID = request.getParameter("orderID");
         String userID = request.getParameter("userID");
+//        String adminID = request.getParameter("adminID");
         int mealID = Integer.parseInt(request.getParameter("mealID"));
-        int num = Integer.parseInt(request.getParameter("num"));
-        Double price = Double.valueOf(request.getParameter("price"));
+//        int num = Integer.parseInt(request.getParameter("num"));
+//        Double price = Double.valueOf(request.getParameter("price"));
         int state = Integer.parseInt(request.getParameter("state"));
-        String pickUpTime = request.getParameter("pickUpTime");
+        int pickUpTime = Integer.parseInt(request.getParameter("pickUpTime"));
         //3.封装Order对象
         Order registerOrder = new Order();
-        registerOrder.setOrderID(orderID);
+//        registerOrder.setOrderID(orderID);
         registerOrder.setUserID(userID);
         registerOrder.setMealID(mealID);
-        registerOrder.setNum(num);
-        registerOrder.setPrice(price);
+//        registerOrder.setNum(num);
+//        registerOrder.setPrice(price);
         registerOrder.setState(state);
         registerOrder.setPickUpTime(pickUpTime);
         //4.调用OrderDao的addOrder方法

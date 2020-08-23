@@ -7,6 +7,16 @@ public class Meal {
 	private String location;
 	private double price;
 	private int state;//0为该菜品可得，1为不可得
+
+	public String getAdminID() {
+		return adminID;
+	}
+
+	public void setAdminID(String adminID) {
+		this.adminID = adminID;
+	}
+
+	private String adminID;//该菜品所对应的管理员ID
 	
 	public int getMealID() {
 		return mealID;

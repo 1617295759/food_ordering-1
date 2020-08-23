@@ -1,8 +1,6 @@
 package web.servlet.Order;
 
-import dao.MealDao;
 import dao.OrderDao;
-import domain.Meal;
 import domain.Order;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -15,17 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/queryOrderServlet")
-public class QueryOrderServlet extends HttpServlet {
+@WebServlet("/queryAdminOrderServlet")
+public class QueryAdminOrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1.设置编码
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/json;charset=utf-8");
         //2.获取请求参数
-        String userID = request.getParameter("userID");
+        String adminID = request.getParameter("adminID");
         //3.调用OrderDao的queryOrder方法
         OrderDao dao = new OrderDao();
-        List<Order> orders = dao.queryOrder(userID);
+        List<Order> orders = dao.queryAdminOrder(adminID);
         //4.判断order是否查询成功
         JSONObject jsonObject = new JSONObject();  //创建Json对象
         JSONArray jsonArray = JSONArray.fromObject(orders);

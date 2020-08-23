@@ -2,35 +2,50 @@ package domain;
 
 public class Administer {
 	
-	private String administerID;
+	private String adminID;
 	private String phone;
 	private String avatarUrl;
-	private String administerName;
+	private String adminName;
 
-	public String getAdministerName() {
-		return administerName;
-	}
-
-	public void setAdministerName(String administerName) {
-		this.administerName = administerName;
+	public String getAdminID() {
+		return adminID;
 	}
 
-	public String getAdministerID() {
-		return administerID;
+	public void setAdminID(String adminID) {
+		this.adminID = adminID;
 	}
-	public void setAdministerID(String administerID) {
-		this.administerID = administerID;
-	}
+
 	public String getPhone() {
 		return phone;
 	}
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 	public String getAvatarUrl() {
 		return avatarUrl;
 	}
+
 	public void setAvatarUrl(String avatarUrl) {
 		this.avatarUrl = avatarUrl;
+	}
+
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
+
+	@Override
+	public String toString() {
+		return "Administer{" +
+				"adminID='" + adminID + '\'' +
+				", phone='" + phone + '\'' +
+				", avatarUrl='" + avatarUrl + '\'' +
+				", adminName='" + adminName + '\'' +
+				'}';
 	}
 }
